@@ -38,11 +38,8 @@ public class ExplodeListener  implements Listener {
         }
     }
 
-    @EventHandler(priority = EventPriority.HIGH)
+    @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onExplodeBlocksByEntity(EntityExplodeEvent event){
-        if (event.isCancelled())
-            return;
-
         if (event.getEntity() instanceof WindCharge)
             return;
 

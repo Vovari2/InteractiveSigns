@@ -13,11 +13,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
 public class BreakListener implements Listener {
-    @EventHandler(priority = EventPriority.LOW)
+    @EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)
     public void onBreakBlockByWorld(BlockDestroyEvent event){
-        if(event.isCancelled())
-            return;
-
         Block block = event.getBlock();
         if (!MaterialSetTag.ALL_SIGNS.isTagged(block.getType()))
             return;
@@ -30,11 +27,8 @@ public class BreakListener implements Listener {
         ItemDisplayUtils.dropItemFromDisplay(location, Side.FRONT);
         ItemDisplayUtils.dropItemFromDisplay(location, Side.BACK);
     }
-    @EventHandler(priority = EventPriority.HIGH)
+    @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onBreakBlockByPlayer(BlockBreakEvent event){
-        if(event.isCancelled())
-            return;
-
         Block block = event.getBlock();
         if (!MaterialSetTag.ALL_SIGNS.isTagged(block.getType()))
             return;
