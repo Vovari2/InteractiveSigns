@@ -49,7 +49,7 @@ shadowJar {
     relocate("org.bstats", "me.vovari2.libs.bstats") // bStats
 
     // General
-    getDestinationDirectory().set(new File("D:\\Minecraft\\Servers\\Paper 1.21.11\\plugins\\"))
+    getDestinationDirectory().set(new File("D:\\Minecraft\\Servers\\Paper 26.2\\plugins\\"))
     archiveFileName = "${project.name}-${project.version}.jar"
 }
 
