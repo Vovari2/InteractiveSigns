@@ -17,4 +17,5 @@ softdepend: [PlaceholderAPI,
              ChestProtect,
              GriefDefender,
              Dominion,
-             Minepacks]
+             Minepacks,
+             LWC]

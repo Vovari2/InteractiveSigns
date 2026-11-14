@@ -3,7 +3,7 @@
 The plugin allows you to insert your items into the sign by clicking **the right mouse button**. To pick up an item, you need to hit the sign with **the left mouse button**.
 Also, items on signs can be waxed with **honeycomb**, once they are waxed they cannot be taken by anyone. Waxing can be removed by using an **axe**.
 
-This plugin also supports sign protection from plugins: **WorldGuard**, **Lands**, **Residence**, **HuskClaims**, **GriefPrevention**, **SuperiorSkyblock2**, **ChestProtect**, **GriefDefender** and **Dominion**.
+This plugin also supports sign protection from plugins: **WorldGuard**, **Lands**, **Residence**, **HuskClaims**, **GriefPrevention**, **SuperiorSkyblock2**, **ChestProtect**, **GriefDefender**, **Dominion** and **LWC Extended**.
 
 Hopefully this will improve and diversify **your gaming experience**.
 
