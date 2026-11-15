@@ -7,6 +7,8 @@ import com.bekvon.bukkit.residence.containers.Flags;
 import com.bekvon.bukkit.residence.protection.ClaimedResidence;
 import com.bgsoftware.superiorskyblock.api.SuperiorSkyblockAPI;
 import com.bgsoftware.superiorskyblock.api.island.Island;
+import com.griefcraft.lwc.LWC;
+import com.griefcraft.model.Protection;
 import com.griefdefender.api.Core;
 import com.griefdefender.api.GriefDefender;
 import com.griefdefender.api.claim.TrustTypes;
@@ -63,6 +65,7 @@ public class ProtectionPlugins {
         addPlugin(DominionProtectionPlugin.class, "Dominion");
         addPlugin(HuskClaimsProtectionPlugin.class, "HuskClaims");
         addPlugin(GriefDefenderProtectionPlugin.class, "GriefDefender");
+        addPlugin(LWCProtectionPlugin.class, "LWC");
     }
     private static void addPlugin(Class<? extends ProtectionPlugin> plugin, String name){
         if (!isEnabledPlugin(name))
@@ -269,6 +272,21 @@ public class ProtectionPlugins {
         @Override
         public boolean canInteractWithSign(Player player, Location location) {
             return instance.checkPrivilegeFlag(location, flag, player);
+        }
+    }
+    private static class LWCProtectionPlugin extends ProtectionPlugin{
+        private final LWC instance;
+        LWCProtectionPlugin(@NotNull String name){
+            super(name);
+            instance = LWC.getInstance();
+        }
+        @Override
+        public boolean canInteractWithSign(Player player, Location location) {
+            Protection protection = instance.findProtection(location);
+            if (protection == null)
+                return true;
+
+            return instance.canAccessProtection(player, protection);
         }
     }
 }
